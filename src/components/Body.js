@@ -25,7 +25,7 @@ const Body = () => {
       "https://instafood.onrender.com/api/restaurants?lat=12.9351929&lng=77.62448069999999"
     );
 
-    const json = await data.json();
+    const json = await data?.json();
 
     // Optional Chaining
     setListOfRestraunt(
