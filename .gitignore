@@ -1,4 +1,8 @@
-/node_modules
-/dist
+#Node modules
+node_modules
+
+#Parcel
 .parcel-cache
-/coverage
+dist
+
+#.DS_Store 
