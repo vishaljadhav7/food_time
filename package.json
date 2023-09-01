@@ -1,7 +1,7 @@
 {
-  "name": "namaste-react",
+  "name": "Vishal",
   "version": "1.0.0",
-  "description": "This is Namaste React by Akshay Saini",
+  "description": "this is food delivery app",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namastedev/namaste-react.git"
+    "url": ""
   },
   "keywords": [],
-  "author": "Akshay Saini",
+  "author": "Vishal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/namastedev/namaste-react/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/namastedev/namaste-react#readme",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
