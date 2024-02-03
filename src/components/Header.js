@@ -31,7 +31,7 @@ Button Text
 </a>
            */}
 
-          <li className="px-4">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+          
           <li className="px-4">
             <Link to="/"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Home</button></Link>
           </li>
