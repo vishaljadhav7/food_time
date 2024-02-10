@@ -31,34 +31,28 @@ Button Text
 </a>
            */}
 
-          
           <li className="px-4">
-            <Link to="/"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Home</button></Link>
-          </li>
-          <li className="px-4">
-            <Link to="/about"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >About</button></Link>
-          </li>
-          <li className="px-4">
-            <Link to="/contact"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Contact</button></Link>
-          </li>
-          <li className="px-4">
-            <Link to="/grocery"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">Grocery</button></Link>
-          </li>
-          <li className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">
-            <Link to="/cart">Cart {cartItems.length}</Link>
-          </li>
-          <button
-            className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
-            onClick={() => {
-              btnNameReact === "Login"
+           <Link to="/"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Home</button></Link>
+         </li>
+         <li className="px-4">
+           <Link to="/about"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >About</button></Link>
+         </li>
+        
+        
+         <li className="px-4">
+           <Link to="/cart"><button className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Cart {cartItems.length}</button>  </Link>
+         </li>
+         <button
+           className="p-2 ml-4 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
+           onClick={() => {
+             btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
                 : setBtnNameReact("Login");
             }}
           >
             {btnNameReact}
           </button>
-
-          {/* <li className="px-4 ">{loggedInUser}</li> */}
+          
         </ul>
       </div>
     </div>
