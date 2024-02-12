@@ -35,7 +35,7 @@ const RestaurantMenu = () => {
    <>
     <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
         <img
-          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px]"
+          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px] rounded-lg"
           src={RES_IMG_CDN + resInfo?.cards[0]?.card?.card?.info?.cloudinaryImageId}
           alt={resInfo?.name}
         />
