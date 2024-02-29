@@ -39,7 +39,7 @@ const ItemList = ({ items, dummy }) => {
                 onClick={() => handleAddItem(item)}
               >
   
-              +
+               Add+
               </button>
             </div>
           </div>
