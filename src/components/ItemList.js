@@ -16,7 +16,7 @@ const ItemList = ({ items, dummy }) => {
         <div
           data-testid="foodItems"
           key={item.card.info.id}
-          className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
+          className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-around"
         >
           <div className="w-9/12">
             <div className="py-2 font-medium">
@@ -34,12 +34,12 @@ const ItemList = ({ items, dummy }) => {
           <img src={CDN_URL + item.card.info.imageId} className="w-full rounded-lg" />
             <div className="absolute left-1/2 -translate-x-1/2 bottom-2">
               <button
-                className="p-1 shadow-lg w-8 rounded-xl bg-blue-500 hover:bg-blue-700 text-white font-bold border border-blue-700 
+                className="p-1 shadow-lg w-14 rounded-lg bg-orange-500 hover:bg-orange-700 text-white font-bold border border-orange-700 
                 "
                 onClick={() => handleAddItem(item)}
               >
   
-               Add+
+              Add+
               </button>
             </div>
           </div>
