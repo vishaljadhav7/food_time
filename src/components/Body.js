@@ -21,24 +21,19 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-     try{
-      const data = await fetch(API_URL);
-      const json = await data.json();
-      console.log(json);
-     // Optional Chaining
-      setListOfRestraunt(
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
-      setFilteredRestaurant(
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      );
- 
- 
-     }
-     catch(error) {
-       console.error("Error fetching restaurants card");
-     }
-   
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4358011&lng=81.846311&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const json = await data?.json();
+
+    // Optional Chaining
+    setListOfRestraunt(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurant(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   const onlineStatus = useOnlineStatus();
