@@ -20,19 +20,23 @@ const RestaurantCard = (props) => {
   return (
     <div
       data-testid="resCard"
-      className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200"
+      className="m-4 p-4 w-[250px] rounded   transition-all duration-700 hover:scale-110"
     >
       <img
         className="rounded-lg"
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
+      <h3 className="font-bold py-1 text-lg">{name}</h3>
+      
       {/* <h4>{avgRating} stars</h4> */}
-      <div className="flex items-center h-5 w-11 gap-1 py-0 px-1 style={buttonStyle}" >
+      <div className="flex items-center h-5 w-11 gap-1 py-0 px-1 style={buttonStyle} mb-1" >
             <AiFillStar /><span>{avgRating}</span>
           </div>
+           <div className="text-opacity-0">
+           <h4 >{cuisines.join(", ")}</h4>
+           </div>
+        
       {/* <h4>₹{costForTwo / 100} FOR TWO</h4> */}
       {/* <h4>{deliveryTime} minutes</h4> */}
       {/* <h4>User : {loggedInUser} </h4> */}
@@ -40,9 +44,7 @@ const RestaurantCard = (props) => {
   );
 };
 
-// Higher Order Component
 
-// input - RestaurantCard =>> RestaurantCardPromoted
 
 export const withPromtedLabel = (RestaurantCard) => {
   return (props) => {

@@ -1,4 +1,4 @@
-import { LOGO_URL } from "../utils/constants";
+
 import foodtime from "../../assets/foodtime.png";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
@@ -20,31 +20,26 @@ const Header = () => {
 
   return (
     <div className="flex justify-between  shadow-lg">
-      <div className="logo-container w-24 h-24">
-        <img className="w-56" src={foodtime} />
+      <div className="logo-container w-24 h-24 p-1 mx-2 ">
+        <img className="w-56 rounded-lg  " src={foodtime} />
       </div>
       <div className="flex items-center">
-        <ul className="flex p-4 m-4">
-          <li className="px-4">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+        <ul className="flex p-2 m-2 gap-4">
           <li className="px-4">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="px-4">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="px-4">
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li className="px-4">
-            <Link to="/grocery">Grocery</Link>
-          </li>
-          <li className="px-4 font-bold">
-            <Link to="/cart">Cart {cartItems.length}</Link>
-          </li>
-          <button
-            className="login"
-            onClick={() => {
-              btnNameReact === "Login"
+           <Link to="/"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Home</button></Link>
+         </li>
+         <li className="px-4">
+           <Link to="/about"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >About</button></Link>
+         </li>
+        
+        
+         <li className="px-4">
+           <Link to="/cart"><button className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Cart {cartItems.length}</button>  </Link>
+         </li>
+         <button
+           className="p-2 ml-4 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
+           onClick={() => {
+             btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
                 : setBtnNameReact("Login");
             }}
@@ -52,7 +47,6 @@ const Header = () => {
             {btnNameReact}
           </button>
 
-          {/* <li className="px-4 ">{loggedInUser}</li> */}
         </ul>
       </div>
     </div>

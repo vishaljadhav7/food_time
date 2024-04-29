@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestrauntMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
-import {RES_IMG_CDN} from "../utils/constants.js";
+import {CDN_URL} from "../utils/constants.js";
 import { AiFillStar } from "react-icons/ai";
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -17,13 +17,13 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage , slaString , avgRating} =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
   const categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.["card"]?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -35,8 +35,8 @@ const RestaurantMenu = () => {
    <>
     <div className="flex basis-full h-60 justify-evenly items-center p-8 bg-blue-950">
         <img
-          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px]"
-          src={RES_IMG_CDN + resInfo?.cards[0]?.card?.card?.info?.cloudinaryImageId}
+          className="w-[254px] h-[165px] mob:w-[130px] mob:[81px] rounded-lg"
+          src={CDN_URL + resInfo?.cards[2]?.card?.card?.info?.cloudinaryImageId}
           alt={resInfo?.name}
         />
 
