@@ -6,6 +6,8 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { API_URL } from "../utils/constants";
 const Body = () => {
+
+  
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -20,23 +22,30 @@ const Body = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4358011&lng=81.846311&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+  const fetchData = async () => {       
+      try{
+          const data = await fetch(API_URL);
+    
+        const json = await data?.json();
+    
+        // Optional Chaining
+        setListOfRestraunt(
+          json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        );
+        setFilteredRestaurant(
+          json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        );       
+    
 
-    const json = await data?.json();
+      }catch(error){
+         console.error("error fetching res data (cors)")
+      }
+   
 
-    // Optional Chaining
-    setListOfRestraunt(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
   };
 
   const onlineStatus = useOnlineStatus();
+
   if (onlineStatus === false)
     return (
       <h1>
@@ -64,7 +73,7 @@ const Body = () => {
             onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText
-              console.log(searchText);
+              // console.log(searchText);
 
               const filteredRestaurant = listOfRestaurants?.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())

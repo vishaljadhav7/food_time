@@ -6,13 +6,19 @@ const ItemList = ({ items, dummy }) => {
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
+    
+    // console.log(item);
     // Dispatch an action
-    dispatch(addItem(item));
+    dispatch(addItem({
+          id : item.card.info.id, 
+          data : item.card,
+      }));
   };
 
   return (
     <div>
-      {items.map((item) => (
+      {items.map((item) => 
+        (
         <div
           data-testid="foodItems"
           key={item.card.info.id}
@@ -30,8 +36,9 @@ const ItemList = ({ items, dummy }) => {
             </div>
             <p className="text-xs text-opacity-25">{item.card.info.description}</p>
           </div>
+
           <div className="w-3/12 p-4 relative">
-          <img src={CDN_URL + item.card.info.imageId} className="w-full rounded-lg" />
+           <img src={CDN_URL + item.card.info.imageId} className="w-full rounded-lg object-cover" />
             <div className="absolute left-1/2 -translate-x-1/2 bottom-2">
               <button
                 className="p-1 shadow-lg w-14 rounded-lg bg-orange-500 hover:bg-orange-700 text-white font-bold border border-orange-700 

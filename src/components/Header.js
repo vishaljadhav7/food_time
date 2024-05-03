@@ -25,15 +25,7 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-2 m-2 gap-4">
-<<<<<<< HEAD
-=======
-           {/* sfsd     
-             <a href="#_" class="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm">
-Button Text
-</a>
-           */}
 
->>>>>>> 9ecae24f006d6495723261cff51a1a3262aa96a7
           <li className="px-4">
            <Link to="/"><button type="button" className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Home</button></Link>
          </li>
@@ -43,7 +35,7 @@ Button Text
         
         
          <li className="px-4">
-           <Link to="/cart"><button className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Cart {cartItems.length}</button>  </Link>
+           <Link to="/cart"><button className="p-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm" >Cart {cartItems.length} </button>  </Link>
          </li>
          <button
            className="p-2 ml-4 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
@@ -55,11 +47,10 @@ Button Text
           >
             {btnNameReact}
           </button>
-<<<<<<< HEAD
 
-=======
+
           
->>>>>>> 9ecae24f006d6495723261cff51a1a3262aa96a7
+
         </ul>
       </div>
     </div>
