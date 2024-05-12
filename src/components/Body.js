@@ -7,8 +7,6 @@ import UserContext from "../utils/UserContext";
 import { API_URL } from "../utils/constants";
 const Body = () => {
 
-  
-  // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
@@ -16,7 +14,7 @@ const Body = () => {
 
   const RestaurantCardPromoted = withPromtedLabel(RestaurantCard);
 
-  // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
+  
 
   useEffect(() => {
     fetchData();
@@ -30,10 +28,10 @@ const Body = () => {
     
         // Optional Chaining
         setListOfRestraunt(
-          json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+          json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         );
         setFilteredRestaurant(
-          json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+          json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         );       
     
 
@@ -57,8 +55,8 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body ">
-      <div className="filter flex justify-center ">
-        <div className="search m-4 p-4 flex gap-3">
+      <div className="  filter flex justify-center">
+        <div className=" -ml-10 w-1/2 md:search m-4 p-4 flex gap-3 mr-7 md :-ml-0">
           <input
             type="text"
             data-testid="searchInput"
@@ -69,12 +67,8 @@ const Body = () => {
             }}
           />
          <button
-            className="inline-block px-5 py-2 mx-auto text-white bg-blue-600 rounded-full hover:bg-blue-700 md:mx-0"
+            className=" ml-4 bg-emerald-400 p-3 rounded-lg text-white "
             onClick={() => {
-              // Filter the restraunt cards and update the UI
-              // searchText
-              // console.log(searchText);
-
               const filteredRestaurant = listOfRestaurants?.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
@@ -87,7 +81,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className=" inline-block px-5 py-2 mx-auto text-white bg-blue-600 rounded-full hover:bg-blue-700 md:mx-0"
+            className=" "
             onClick={() => {
               const filteredList = listOfRestaurants?.filter(
                 (res) => res.info.avgRating > 4
@@ -99,6 +93,7 @@ const Body = () => {
           </button>
         </div>
        </div>
+       
       <div className="flex flex-wrap justify-center align-middle">
         {filteredRestaurant?.map((restaurant) => (
           <Link
